@@ -17,7 +17,7 @@ function StatsModelData(x::X, y::Y; obs = :rows) where {X<:AbstractMatrix,Y<:Abs
     elseif obs == :cols 
         size(x, 2) == length(y) || error("Incompatible x and y sizes")
     else
-        @error("obs must be :rows or :cols.  Found :$obs")
+        Compat.@error("obs must be :rows or :cols.  Found :$obs")
     end
     StatsModelData{X,Y,Nothing,obs}(x, y, nothing)
 end
