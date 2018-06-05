@@ -1,11 +1,13 @@
 #-----------------------------------------------------------------------# RegERM
-mutable struct RegERM{L <: Loss, P <: Penalty, T} <: MLModel
-    β0::T
-    β::Vector{T}
-    λ::Vector{T}
+mutable struct RegERM{L <: Loss, P <: Penalty} <: AbstractMLModel
+    β0::Float64
+    β::Vector{Float64}
+    λ::Vector{Float64}
     loss::L 
     penalty::P
 end
+RegERM(loss, penalty, λ=0.0) = RegERM(0.0, zeros(0), fill(λ, 1), loss, penalty)
+
 
 
 # struct StatsModel{L, P, D, T}

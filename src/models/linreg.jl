@@ -1,4 +1,4 @@
-mutable struct LinearRegression{T} <: MLModel 
+mutable struct LinearRegression{T} <: AbstractMLModel 
     β0::T
     β::Vector{T}
     A::Matrix{T}

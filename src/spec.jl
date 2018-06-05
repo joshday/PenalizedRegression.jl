@@ -1,4 +1,4 @@
-struct ModelSpec{M <: MLModel, D <: MLData, S <: LearningStrategy}
+struct ModelSpec{M <: AbstractMLModel, D <: MLData, S <: LearningStrategy}
     model::M
     data::D 
     strat::S
